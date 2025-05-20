@@ -2,7 +2,7 @@ name: "Container Security Scan"
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main", "master", "ghas-analysis" ]
     paths:
       - 'Dockerfile'
       - 'docker-compose.yml'
@@ -13,6 +13,7 @@ on:
       - 'Dockerfile'
       - 'docker-compose.yml'
       - '**.dockerfile'
+  workflow_dispatch: # Permite activación manual
   schedule:
     - cron: '0 3 * * 2'  # Ejecutar a las 3:00 AM todos los martes
 

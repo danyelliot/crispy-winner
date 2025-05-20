@@ -2,11 +2,12 @@ name: "GitLeaks Secret Scanning"
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main", "master", "ghas-analysis" ]
   pull_request:
     branches: [ "main", "master" ]
   schedule:
     - cron: '0 2 * * 1'  # Ejecutar a las 2:00 AM todos los lunes
+  workflow_dispatch: # Permite activación manual
 
 jobs:
   scan:
